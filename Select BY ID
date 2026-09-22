@@ -1,0 +1,21 @@
+# Select By ID
+
+## 1. Đề bài
+Query all columns for a city in CITY with the ID 1661.
+The CITY table is described as follows:
+
+## 2. Bảng CITY
+
+| Field | Type |
+|---|---|
+| ID | NUMBER |
+| NAME | VARCHAR2(17) |
+| COUNTRYCODE | VARCHAR2(3) |
+| DISTRICT | VARCHAR2(20) |
+| POPULATION | NUMBER |
+
+## 3. SQL
+SELECT *
+FROM CITY
+WHERE ID = 1661;
+
