@@ -1,0 +1,50 @@
+## Đề bài
+Alice and Bob 
+Input Format
+The first line contains 3 space-separated integers, a[0], a[1], and a[2], the respective values in triplet a.
+The second line contains 3 space-separated integers, b[0], b[1], and b[2], the respective values in triplet b.
+Constraints
+1 ≤ a[i] ≤ 100
+1 ≤ b[i] ≤ 100
+Sample Input 0
+5 6 7
+3 6 10
+Sample Output 0
+1 1
+Explanation 0
+In this example:
+Now, let's compare each individual score:
+, so Alice receives  point.
+, so nobody receives a point.
+, so Bob receives  point.
+Alice's comparison score is , and Bob's comparison score is . Thus, we return the array .
+Sample Input 1
+17 28 30
+99 16 8
+Sample Output 1
+2 1
+Explanation 1
+Comparing the  elements,  so Bob receives a point.
+Comparing the  and  elements,  and  so Alice receives two points.
+The return array is .
+##
+#include <bits/stdc++.h>
+using namespace std;
+vector<int> compareTriplets(vector<int> a, vector<int> b) {
+    int alice = 0, bob = 0;
+    for(int i = 0; i < 3; i++) {
+        if(a[i] > b[i]) alice++;
+        else if(a[i] < b[i]) bob++;
+    }
+    return {alice, bob};
+}
+
+int main() {
+    vector<int> a(3), b(3);
+    for(int i = 0; i < 3; i++) cin >> a[i];
+    for(int i = 0; i < 3; i++) cin >> b[i];
+    
+    vector<int> res = compareTriplets(a, b);
+    cout << res[0] << " " << res[1] << endl;
+    return 0;
+}
